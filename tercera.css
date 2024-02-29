@@ -1,0 +1,28 @@
+.menu{
+    height: 20vh;
+    width: 100%;
+    background: rgb(68, 114, 196);
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    color: white ;
+}
+
+h1{
+    font-size: 5vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grid{
+    height: 80svh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo{
+    margin: 5px;
+    height: 18vh;
+}
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamo</title>
+    <link rel="stylesheet" href="tercera.css">
+</head>
+<body>
+    <div class="menu">
+        <img class="logo" src="logoUnaula.png" alt="">
+        <h1>Préstamo de dispositivos <br> UNAULA </h1>
+        <div></div>
+    </div>
+    <div class="grid">
+        <div>
+            <label>dispositivos disponibles</label><br>
+            <select name="bebida">
+                <option value="001">tablet</option>
+                <option value="002">computador</option>
+                <option value="003">celular</option>
+                <option value="004">audífonos</option>
+                <option value="007">micrófono</option>
+                <option value="008">parlante</option>
+                <option value="009">mouse</option>
+                <option value="010">teclado</option>
+                <option value="011">ventilador</option>
+            </select>
+        </div>
+        <div>
+            <form action="">
+                <label for="date1">Fecha de préstamo:</label><br>
+                <input type="date" id="date1" class="date1" required oninput="updateDate2Min()"><br>
+                <label for="date2">Fecha de devolución:</label><br>
+                <input type="date" id="date2" class="date2" required><br>
+            </form>
+            <button onclick="event.preventDefault(); reservar()">enviar</button>
+            <button onclick="event.preventDefault(); volver()">volver</button>
+        </div>
+    </div>
+    <script>
+        function updateDate2Min() {
+            var date1 = new Date(document.getElementById('date1').value);
+            var currentDate = new Date();
+
+            // Restringir date1 a no más de un día antes de la fecha actual
+            currentDate.setDate(currentDate.getDate() - 1);
+
+            if (date1 < currentDate) {
+                alert('La fecha de préstamo no puede ser más de un día anterior a la fecha actual.');
+                document.getElementById('date1').value = '';
+                return;
+            }
+
+            // Establecer la fecha mínima de date2 como date1
+            document.getElementById('date2').min = document.getElementById('date1').value;
+
+            // Establecer la fecha máxima de date2 como un mes después de date1
+            var maxDate = new Date(date1);
+            maxDate.setMonth(maxDate.getMonth() + 1);
+            document.getElementById('date2').max = maxDate.toISOString().split('T')[0];
+        }
+
+        function reservar() {
+            // Implementa la lógica de reserva aquí
+            alert('Reserva realizada con éxito');
+        }
+
+        function volver() {
+            window.location.href = 'seg.html';
+        }
+    </script>
+</body>
+</html>

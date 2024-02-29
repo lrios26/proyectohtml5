@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styleseg.css">
+    
+</head>
+<body>
+    <div class="menu">
+        <img class="logo" src="logoUnaula.png"  alt="">
+        <h1>Préstamo de dispositivos <br> UNAULA </h1>
+        <div></div>
+    </div>
+    <div class="grid">
+        <button onclick="event.preventDefault(); irdisponibles()">Dispositivos disponibles</button>
+        <button onclick="event.preventDefault(); irprestados()">Dispositivos prestados</button>
+    </div>
+    <div class="btnsalir">
+        
+        <button onclick="event.preventDefault(); inicio()">Cerrar sesion</button>
+    </div>
+</body>
+<script>
+    function irdisponibles(){
+        window.location.href='tercera.html'
+    }
+    function irprestados(){
+        window.location.href='prestados.html'
+    }
+    function inicio(){
+        window.location.href='index.html'
+    }
+</script>
+</html>
